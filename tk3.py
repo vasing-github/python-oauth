@@ -58,7 +58,7 @@ zancun_button.grid(row=4, column=0, sticky='w', padx=10, pady=10)
 # 第6行：create a text widget to display the output
 text = scrolledtext.ScrolledText(root)
 text.grid(row=5, column=0, sticky='w', columnspan=3, padx=10, pady=10,rowspan=5)
-notice_label = tk.Label(root, text="注意:本软件仅作为学习使用，目的在于减少人工录入的错误，节约人工录入时间.\n\n本软件不会给服务器造成压力.\n\n录入数据需按真实情况填写在imEx.xlsx表格中，本软件不提供数据来源", font=("Arial", 12), bg="#F0F0F0",wraplength=150)
+notice_label = tk.Label(root, text="注意:本软件仅作为学习使用，目的在于减少人工录入的错误，节约人工录入时间.\n\n本软件不会给服务器造成压力.\n\n录入数据需按真实情况填写在imEx.xlsx表格中，本软件不提供数据来源", font=("Arial", 11), bg="#F0F0F0",wraplength=150)
 notice_label.grid(row=5, column=3, padx=10, pady=10, sticky='w', columnspan=4,rowspan=5)
 def on_record_button_click():
 
