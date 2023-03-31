@@ -1,7 +1,7 @@
 
 import conf
 import requests
-
+import tkinter as tk
 Authorization = conf.Authorization
 numOfPush = 0
 def get_list():
@@ -53,7 +53,7 @@ def submitAffair(busiId,q):
     print("code:",code,"succ:",succ,"name:",name)
     q.put(f"code:{code},succ:{succ},name:{name}\n\n")
 
-def run(q, num, key):
+def run(q, num, key,fazheng_button):
     global Authorization, numOfPush
     numOfPush = int(num)
     Authorization = key
@@ -71,7 +71,7 @@ def run(q, num, key):
             print('错了几个？', j)
             q.put(f"错误：{j}\n")
         print("\n")
-
+    fazheng_button.config(state=tk.NORMAL)
 
 
 

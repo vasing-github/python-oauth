@@ -1,5 +1,5 @@
 import requests
-
+import tkinter as tk
 
 def pingjia(num,q):
     url = 'http://hcp.sczwfw.gov.cn/app/api/evaluationFileHandler'
@@ -18,7 +18,7 @@ def pingjia(num,q):
     q.put(f"开始评价：{r.text}\n\n")
 
 
-def run(q, numOfthink, key):
+def run(q, numOfthink, key,review_button):
     url = 'http://59.225.201.162:8086/api/approval/dth/affair-expand/zongHe/selectAffairList'
     data = '{"affairName":null,"beginTime":"","bizStatus":"","endTime":"","deptCode":"","bigBizStatus":"91","sfpj":"0","page":'+str(1)+',"rows":'+str(numOfthink)+'}'
     headers ={
@@ -43,4 +43,4 @@ def run(q, numOfthink, key):
         q.put(f"编号：{i['affairCode']}，姓名：{i['applicantName']}\n")
         pingjia(i['affairCode'],q)
         a += 1
-
+    review_button.config(state=tk.NORMAL)

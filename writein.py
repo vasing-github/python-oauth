@@ -4,7 +4,7 @@ import requests
 import time
 import conf
 import tools
-
+import tkinter as tk
 writeNum = 0
 Authorization=''
 
@@ -158,7 +158,7 @@ def input_zwsj(q):
     print("\n")
 
 
-def run(q,num,key):
+def run(q,num,key,record_button):
     i = 1
     j = 0
 
@@ -175,11 +175,5 @@ def run(q,num,key):
             print('错了几个？', j)
             q.put('错了几个？', j)
         i += 1
+    record_button.config(state=tk.NORMAL)
 
-
-
-def printSomething(i):
-    print("Hey whatsup bro, i am doing something very interesting.",i)
-    # trigger the custom event on root window object
-    root.event_generate("<Print>")
-    root.update()
